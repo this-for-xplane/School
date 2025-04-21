@@ -739,14 +739,14 @@
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                height: 90px; /* 높이 증가 */
+                height: 90px;
                 background-color: #f5f5f5;
                 flex-direction: row;
                 justify-content: space-around;
                 align-items: center;
                 z-index: 1000;
                 box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-                padding: 0 20px; /* 좌우 패딩 추가 */
+                padding: 0 20px;
             }
             
             body.dark-mode .mobile-bottom-tabs {
@@ -755,20 +755,20 @@
             }
             
             .mobile-tab-button {
-                width: 70px; /* 버튼 크기 증가 */
-                height: 70px; /* 버튼 크기 증가 */
+                width: 70px;
+                height: 70px;
                 border-radius: 50%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                font-size: 28px; /* 아이콘 크기 증가 */
+                font-size: 28px;
                 background-color: #e0e0e0;
                 color: #333333;
                 border: none;
                 cursor: pointer;
                 transition: background-color 0.2s, color 0.2s;
-                margin: 0 5px; /* 버튼 간 간격 추가 */
+                margin: 0 5px;
             }
             
             body.dark-mode .mobile-tab-button {
@@ -790,7 +790,7 @@
             }
             
             .content-area {
-                padding-bottom: 100px; /* 하단 탭과의 간격 증가 */
+                padding-bottom: 100px;
             }
         }
     </style>
@@ -1152,8 +1152,6 @@
         <button class="mobile-tab-button" onclick="switchTab('empty')">📋</button>
         <button class="mobile-tab-button" onclick="switchTab('settings')">⚙️</button>
     </div>
-
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
 
     <script>
         // 번역 데이터
@@ -2352,8 +2350,7 @@
 
         // 모바일 메뉴 토글
         function toggleMobileMenu() {
-            const verticalTabs = document.querySelector('.vertical-tabs');
-            verticalTabs.classList.toggle('active');
+            // 제거
         }
         
         // 화면 크기 변경 시 레이아웃 조정
@@ -2364,16 +2361,9 @@
             }
         });
         
-        // 모바일에서 메뉴 외부 클릭 시 메뉴 닫기
+        // 모바일에서 메뉴 외부 클릭 시 메뉴 닫기 관련 코드 제거
         document.addEventListener('click', function(event) {
-            const verticalTabs = document.querySelector('.vertical-tabs');
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            
-            if (window.innerWidth <= 768 && 
-                !verticalTabs.contains(event.target) && 
-                !mobileMenuToggle.contains(event.target)) {
-                verticalTabs.classList.remove('active');
-            }
+            // 제거
         });
 
         // 모바일 탭 버튼 상태 동기화
