@@ -517,23 +517,45 @@
             /* 모바일 스타일 */
             body {
                 flex-direction: column;
+                padding-bottom: 80px; /* 하단 탭 높이를 위한 여백 */
             }
             
             .vertical-tabs {
+                position: fixed;
+                bottom: 0;
+                left: 0;
                 width: 100%;
+                height: 80px;
+                background-color: #f5f5f5;
+                display: flex;
                 flex-direction: row;
-                padding: 10px;
                 justify-content: space-around;
+                align-items: center;
+                padding: 0;
+                z-index: 1000;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            }
+            
+            body.dark-mode .vertical-tabs {
+                background-color: #2b2b2b;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
             }
             
             .tab-button {
-                width: 50px;
-                height: 50px;
-                margin: 0 5px;
+                width: 60px;
+                height: 60px;
+                margin: 0;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
             }
             
             .content-area {
                 padding: 10px;
+                padding-bottom: 90px; /* 하단 탭과의 간격 */
             }
             
             .main-container {
@@ -592,6 +614,11 @@
                 top: 0;
                 background-color: inherit;
                 z-index: 1001;
+            }
+
+            /* 모바일 메뉴 토글 버튼 제거 */
+            .mobile-menu-toggle {
+                display: none;
             }
         }
         
@@ -664,6 +691,76 @@
             
             .vertical-tabs.active {
                 display: flex;
+            }
+        }
+
+        /* 모바일 하단 탭 */
+        .mobile-bottom-tabs {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* 모바일 스타일 */
+            body {
+                padding-bottom: 80px; /* 하단 탭 높이를 위한 여백 */
+            }
+            
+            .mobile-bottom-tabs {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 80px;
+                background-color: #f5f5f5;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                z-index: 1000;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            }
+            
+            body.dark-mode .mobile-bottom-tabs {
+                background-color: #2b2b2b;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            }
+            
+            .mobile-tab-button {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                background-color: #e0e0e0;
+                color: #333333;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.2s, color 0.2s;
+            }
+            
+            body.dark-mode .mobile-tab-button {
+                background-color: #3f3f3f;
+                color: #ffffff;
+            }
+            
+            .mobile-tab-button:hover {
+                background-color: #d0d0d0;
+            }
+            
+            body.dark-mode .mobile-tab-button:hover {
+                background-color: #4f4f4f;
+            }
+            
+            .mobile-tab-button.active {
+                background-color: #0078d4;
+                color: #ffffff;
+            }
+            
+            .content-area {
+                padding-bottom: 90px; /* 하단 탭과의 간격 */
             }
         }
     </style>
@@ -1017,6 +1114,13 @@
                 </ul>
             </div>
         </div>
+    </div>
+    
+    <!-- 모바일 하단 탭 -->
+    <div class="mobile-bottom-tabs">
+        <button class="mobile-tab-button active" onclick="switchTab('main')">📅</button>
+        <button class="mobile-tab-button" onclick="switchTab('empty')">📋</button>
+        <button class="mobile-tab-button" onclick="switchTab('settings')">⚙️</button>
     </div>
 
     <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
@@ -1495,7 +1599,7 @@
         createCalendar();
 
         function switchTab(tabName) {
-            document.querySelectorAll('.tab-button').forEach(button => {
+            document.querySelectorAll('.tab-button, .mobile-tab-button').forEach(button => {
                 button.classList.remove('active');
             });
             
@@ -1511,6 +1615,9 @@
             if (selectedContainer) {
                 selectedContainer.classList.add('active');
             }
+            
+            // 모바일 탭 상태 동기화
+            syncMobileTabs();
         }
 
         // 다크모드 전환 함수
@@ -2238,6 +2345,20 @@
                 verticalTabs.classList.remove('active');
             }
         });
+
+        // 모바일 탭 버튼 상태 동기화
+        function syncMobileTabs() {
+            const desktopTabs = document.querySelectorAll('.tab-button');
+            const mobileTabs = document.querySelectorAll('.mobile-tab-button');
+            
+            desktopTabs.forEach((tab, index) => {
+                if (tab.classList.contains('active')) {
+                    mobileTabs[index].classList.add('active');
+                } else {
+                    mobileTabs[index].classList.remove('active');
+                }
+            });
+        }
     </script>
 </body>
 </html> 
