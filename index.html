@@ -788,28 +788,120 @@
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        @media screen and (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-            .vertical-tabs {
-                display: none;
-            }
-            .vertical-tabs.active {
-                display: flex;
-            }
-        }
-        .mobile-bottom-tabs {
-            display: none;
-        }
-        @media screen and (max-width: 768px) {
-            .mobile-bottom-tabs {
-                display: flex;
-            }
-            .content-area {
-                padding-bottom: 100px;
-            }
-        }
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding-bottom: 100px; /* 하단 탭 영역 확보 */
+    }
+
+    .vertical-tabs {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0;
+        z-index: 1000;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+
+    body.dark-mode .vertical-tabs {
+        background-color: #2b2b2b;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    }
+
+    .tab-button {
+        width: 60px;
+        height: 60px;
+        margin: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .content-area {
+        padding: 10px;
+        padding-bottom: 90px;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .left-container, .right-container {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .top-controls {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    #class-select {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .timetable {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        text-align: center;
+        border-spacing: 0;
+    }
+
+    .timetable thead th,
+    .timetable tbody td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .timetable tbody td {
+        height: 50px;
+    }
+
+    .calendar {
+        min-height: 300px;
+    }
+
+    .calendar tbody td {
+        height: 80px;
+    }
+
+    .settings-container {
+        max-width: 100%;
+    }
+
+    .post-list th:nth-child(4), .post-list td:nth-child(4),
+    .post-list th:nth-child(5), .post-list td:nth-child(5) {
+        display: none;
+    }
+
+    .post-form input, .post-form textarea {
+        font-size: 14px;
+    }
+
+    .post-actions-menu {
+        right: -10px;
+    }
+
+    .post-detail.active {
+        max-height: 300px;
+    }
+}
     </style>
 </head>
 <body>
