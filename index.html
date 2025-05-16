@@ -660,141 +660,13 @@
             background-color: #333;
             border-color: #555;
         }
-        @media screen and (max-width: 768px) {
-            body {
-                flex-direction: column;
-                padding-bottom: 100px;
-            }
-            .vertical-tabs {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 80px;
-                background-color: #f5f5f5;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                padding: 0;
-                z-index: 1000;
-                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            }
-            body.dark-mode .vertical-tabs {
-                background-color: #2b2b2b;
-                box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
-            }
-            .tab-button {
-                width: 60px;
-                height: 60px;
-                margin: 0;
-                border-radius: 50%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                font-size: 24px;
-            }
-            .content-area {
-                padding: 10px;
-                padding-bottom: 90px;
-            }
-            .main-container {
-                flex-direction: column;
-            }
-            .left-container, .right-container {
-                min-width: 100%;
-                margin-bottom: 20px;
-            }
-            .top-controls {
-                flex-direction: column;
-                gap: 10px;
-                height: auto;
-            }
-            .search-container {
-                width: 100%;
-            }
-            #class-select {
-                width: 100%;
-                padding: 10px;
-            }
-            .timetable, .calendar {
-                height: auto;
-                min-height: 300px;
-            }
-            .timetable tbody td {
-                height: 50px;
-                font-size: 12px;
-                padding: 4px;
-            }
-            .calendar tbody td {
-                height: 80px;
-            }
-            .settings-container {
-                max-width: 100%;
-            }
-            .post-list th:nth-child(4), .post-list td:nth-child(4),
-            .post-list th:nth-child(5), .post-list td:nth-child(5) {
-                display: none;
-            }
-            .post-form input, .post-form textarea {
-                font-size: 14px;
-            }
-            .post-actions-menu {
-                right: -10px;
-            }
-            .post-detail.active {
-                max-height: 300px;
-            }
-        }
-        @media screen and (min-width: 769px) and (max-width: 1024px) {
-            .main-container {
-                flex-direction: column;
-            }
-            .left-container, .right-container {
-                min-width: 100%;
-                margin-bottom: 20px;
-            }
-            .timetable, .calendar {
-                height: 500px;
-            }
-            .settings-container, .community-container {
-                max-width: 90%;
-            }
-        }
-        @media screen and (min-width: 1025px) {
-            .main-container {
-                flex-direction: row;
-            }
-            .left-container, .right-container {
-                min-width: 400px;
-            }
-            .timetable, .calendar {
-                height: 700px;
-            }
-        }
-        .mobile-menu-toggle {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #0078d4;
-            color: white;
-            border: none;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-@media screen and (max-width: 768px) {
-    body {
+            @media screen and (max-width: 768px) {
+      body {
         flex-direction: column;
         padding-bottom: 100px; /* 하단 탭 영역 확보 */
-    }
+      }
 
-    .vertical-tabs {
+      .vertical-tabs {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -808,14 +680,14 @@
         padding: 0;
         z-index: 1000;
         box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-    }
+      }
 
-    body.dark-mode .vertical-tabs {
+      body.dark-mode .vertical-tabs {
         background-color: #2b2b2b;
         box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
-    }
+      }
 
-    .tab-button {
+      .tab-button {
         width: 60px;
         height: 60px;
         margin: 0;
@@ -824,84 +696,113 @@
         align-items: center;
         justify-content: center;
         font-size: 24px;
-    }
+      }
 
-    .content-area {
+      .content-area {
         padding: 10px;
         padding-bottom: 90px;
-    }
+      }
 
-    .main-container {
+      .main-container {
         flex-direction: column;
-    }
+      }
 
-    .left-container, .right-container {
+      .left-container, .right-container {
         min-width: 100%;
         margin-bottom: 20px;
-    }
+      }
 
-    .top-controls {
+      .top-controls {
         flex-direction: column;
         gap: 10px;
         height: auto;
-    }
+      }
 
-    .search-container {
+      .search-container {
         width: 100%;
-    }
+      }
 
-    #class-select {
+      #class-select {
         width: 100%;
         padding: 10px;
-    }
+      }
 
-    .timetable {
+      .timetable {
         width: 100%;
         display: block;
         overflow-x: auto;
         text-align: center;
         border-spacing: 0;
-    }
+      }
 
-    .timetable thead th,
-    .timetable tbody td {
+      .timetable thead th,
+      .timetable tbody td {
         padding: 8px;
         font-size: 14px;
-    }
+      }
 
-    .timetable tbody td {
+      .timetable tbody td {
         height: 50px;
-    }
+      }
 
-    .calendar {
+      .calendar {
         min-height: 300px;
-    }
+      }
 
-    .calendar tbody td {
+      .calendar tbody td {
         height: 80px;
-    }
+      }
 
-    .settings-container {
+      .settings-container {
         max-width: 100%;
-    }
+      }
 
-    .post-list th:nth-child(4), .post-list td:nth-child(4),
-    .post-list th:nth-child(5), .post-list td:nth-child(5) {
+      .post-list th:nth-child(4), .post-list td:nth-child(4),
+      .post-list th:nth-child(5), .post-list td:nth-child(5) {
         display: none;
-    }
+      }
 
-    .post-form input, .post-form textarea {
+      .post-form input, .post-form textarea {
         font-size: 14px;
-    }
+      }
 
-    .post-actions-menu {
+      .post-actions-menu {
         right: -10px;
-    }
+      }
 
-    .post-detail.active {
+      .post-detail.active {
         max-height: 300px;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      .vertical-tabs {
+        display: none;
+      }
+
+      .vertical-tabs.active {
+        display: flex;
+      }
+
+      .mobile-bottom-tabs {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f5f5f5;
+        justify-content: space-around;
+        align-items: center;
+        height: 60px;
+        z-index: 1000;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      }
     }
-}
+  </style>
+</head>
+<body>
     </style>
 </head>
 <body>
@@ -1804,43 +1705,7 @@
 
         // 도움말 관련 함수: 미구현 알림
         function showTerms() {
-            alert('개인정보 수집·이용 동의서: `개인정보 수집∙이용 동의서
-
-회사명: ToCive
-ToCive(이하 "회사")는 개인정보 보호법에 따라 고객의 개인정보를 안전하게 관리하고자 아래와 같이 개인정보 수집∙이용에 대한 동의를 받고자 합니다.
-
-1. 개인정보 수집∙이용 목적
-- 서비스 제공 및 회원 관리
-- 고객 문의 및 민원 처리
-- 서비스 개선 및 맞춤형 서비스 제공
-- 법적 의무 준수
-
-2. 수집하는 개인정보 항목
-- 필수항목: 이름, 연락처, 이메일 주소
-- 선택항목: 생년월일, 주소
-
-3. 개인정보 보유 및 이용 기간
-- 수집된 개인정보는 수집∙이용 목적이 달성된 후 지체 없이 파기합니다.
-- 단, 관계 법령에 따라 보존이 필요한 경우 해당 법령에서 정한 기간 동안 보관합니다.
-
-4. 개인정보 제3자 제공
-- 회사는 고객의 개인정보를 제3자에게 제공하지 않습니다.
-- 단, 고객의 사전 동의를 받은 경우 또는 법령에 따른 경우 예외로 합니다.
-
-5. 개인정보 처리 위탁
-- 회사는 서비스 제공을 위해 아래와 같은 업무를 외부에 위탁할 수 있으며, 위탁받은 업체는 개인정보 보호법에 따라 개인정보를 안전하게 처리할 의무를 가집니다.
-- 위탁업체: (해당 시 기재 예정)
-- 위탁업무: (해당 시 기재 예정)
-
-6. 동의 거부 권리 및 불이익
-- 고객은 개인정보 수집∙이용에 대한 동의를 거부할 권리가 있으며, 동의를 거부할 경우 서비스 이용에 제한이 있을 수 있습니다.
-
-7. 개인정보 보호 책임자
-- 성명: (지서준)
-- 직책: (CEO, COO)
-- 연락처: (010-4862-7350), (seojunji62@gmail.com)
-
-서비스를 이용함으로서 위 내용을 충분히 이해하였으며, 이에 동의하는것으로 간주합니다.');
+            alert('개인정보 수집·이용 동의서: 구현 예정');
         }
         function showLocationSettings() {
             alert('위치 정보 설정: 구현 예정');
@@ -1852,7 +1717,7 @@ ToCive(이하 "회사")는 개인정보 보호법에 따라 고객의 개인정�
             alert('자주 찾는 도움말: 구현 예정');
         }
         function showContact() {
-            alert('문의하기: seounji62@gmail.com/010-4862-7350');
+            alert('문의하기: 구현 예정');
         }
         function showUserGuide() {
             alert('사용 가이드: 구현 예정');
